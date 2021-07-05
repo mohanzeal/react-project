@@ -53,8 +53,9 @@ Project Library and workflow implementations/requirements
 **yarn** - integrated <br />
 **git** - integrated<br />
 **github** - integrated<br />
+**linting** - integrated<br />
+**githooks** - integrated (using husky)<br />
+**code formatter** - integrated (using prettier)<br />
 
 **jsdocs** - pending<br />
-**linting** - pending<br />
-**githooks** - pending<br />
 **sentry** - pending (reports errors occuring in production)<br />

@@ -42,3 +42,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+Project Library and workflow implementations/requirements
+
+**reactjs** - integrated<br />
+**redux** - integrated<br />
+**typescript** - integrated<br />
+**testing** - integrated (jest)<br />
+**yarn** - integrated <br />
+**git** - integrated<br />
+**github** - integrated<br />
+
+**jsdocs** - pending<br />
+**linting** - pending<br />
+**githooks** - pending<br />
+**sentry** - pending (reports errors occuring in production)<br />

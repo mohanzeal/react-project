@@ -22,8 +22,13 @@
   font-size: calc(10px + 2vmin);
 }
 
-.App-link {
+.App-link,
+.App-heading {
   color: rgb(112, 76, 182);
+}
+
+.App-heading2 {
+  color: green;
 }
 
 @keyframes App-logo-float {

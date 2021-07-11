@@ -12,6 +12,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.7",
+    "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.0",
@@ -23,7 +24,7 @@
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
-    "lint-fix": "prettier --write ."
+    "lint-fix": "prettier --write ./src"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [

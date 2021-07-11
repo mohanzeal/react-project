@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
 import Animal from "./Animal/Animal";
+import Post from "./Posts/Post";
 
 class App extends Component {
   state = {
@@ -97,7 +98,7 @@ class App extends Component {
             </div>
           );
         })}
-        <pre>{JSON.stringify(this.state)}</pre>
+        <Post />
       </div>
     );
   }

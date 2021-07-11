@@ -1,0 +1,18 @@
+.Post-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Post-wrapper {
+  width: 300px;
+  border: 1px solid gray;
+  margin: 10px;
+}
+
+.Post-title {
+  font-size: larger;
+  font-weight: 400;
+}
+
+.Post-body {
+  font-size: small;
+}

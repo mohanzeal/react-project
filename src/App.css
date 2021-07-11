@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.App .active {
+  color: orange;
+}
+
+.App .highlight {
+  color: lightblue;
+}
+
+.App-nav {
+  display: inline-block;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

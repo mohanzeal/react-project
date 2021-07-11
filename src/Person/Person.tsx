@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-
+import { withRouter } from 'react-router-dom'
 export interface PersonPros {
   firstName: string;
   lastName: string;
   abc?: string;
   change: React.ChangeEventHandler;
 }
-export default class Person extends Component<any, any> {
+class Person extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = { test: "person comp. local state" };
-    console.log("Person.tsx constructor");
+    console.log("Person.tsx constructor", this.props);
   }
 
   static getDerivedStateFromProps(props: any, state: any) {
@@ -19,6 +19,7 @@ export default class Person extends Component<any, any> {
   }
 
   componentDidMount() {
+    console.log('props', this.props)
     console.log("Person.tsx componentDidMount");
   }
 
@@ -64,3 +65,5 @@ export default class Person extends Component<any, any> {
     );
   }
 }
+
+export default withRouter(Person);

@@ -3,7 +3,7 @@ import "./App.css";
 import Person from "./Person/Person";
 import Animal from "./Animal/Animal";
 import Post from "./Posts/Post";
-
+import { BrowserRouter, Route, NavLink } from "react-router-dom";
 class App extends Component {
   state = {
     firstName: "john",
@@ -12,15 +12,7 @@ class App extends Component {
       {
         firstName: "lohit",
         lastName: "bane",
-      },
-      // {
-      //   firstName: 'rithesh',
-      //   lastName: 'bane'
-      // },
-      // {
-      //   firstName: 'mohan',
-      //   lastName: 'bane'
-      // },
+      }
     ],
   };
 
@@ -73,33 +65,63 @@ class App extends Component {
     this.setState(state);
   };
 
+  renderPeople = () => {
+    return this.state.persons.map((person: any, index: number) => {
+      return (
+        <div key={index}>
+          <button
+            onClick={this.toggleFirstNameHandler("changed john", "changed doe")}
+          >
+            Switch name
+          </button>
+          <div >
+            <Person
+              change={($event: React.ChangeEvent<HTMLInputElement>) =>
+                this.changeNameHandler($event, index)
+              }
+              firstName={person.firstName}
+              lastName={person.lastName}
+            />
+            <Animal firstName={person.firstName} />
+          </div>
+        </div>
+      );
+    });
+  };
+
+  renderHome = () => {
+    return <div>Home</div>;
+  };
+
   render() {
     console.log("App.tsx render");
     return (
-      <div className="App">
-        <h1 className="App-heading">Hi I am a react developer</h1>
-        <h2 className="App-heading2">started learning react</h2>
-        <button
-          onClick={this.toggleFirstNameHandler("changed john", "changed doe")}
-        >
-          Switch name
-        </button>
-        {this.state.persons.map((person: any, index: number) => {
-          return (
-            <div key={index}>
-              <Person
-                change={($event: React.ChangeEvent<HTMLInputElement>) =>
-                  this.changeNameHandler($event, index)
-                }
-                firstName={person.firstName}
-                lastName={person.lastName}
-              />
-              <Animal firstName={person.firstName} />
-            </div>
-          );
-        })}
-        <Post />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <ul className="App-nav">
+            <li>
+              <NavLink activeClassName="highlight" to="/blog">blog</NavLink>
+            </li>
+            <li>
+              <NavLink to="/home">home</NavLink>
+            </li>
+            <li>
+              <NavLink to={{
+                pathname: "/people",
+                hash: "#submit",
+                search: '?type=people'
+              }}>people</NavLink>
+            </li>
+          </ul>
+          <Route path="/blog" exact component={Post}></Route>
+          <Route path="/home" exact render={() => this.renderHome()}></Route>
+          <Route
+            path="/people"
+            exact
+            render={() => this.renderPeople()}
+          ></Route>
+        </div>
+      </BrowserRouter>
     );
   }
 }
